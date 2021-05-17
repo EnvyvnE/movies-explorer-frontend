@@ -1,0 +1,144 @@
+.student{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 0 auto;
+}
+.student__title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+}
+.student__subtitle{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+.student__paragraph{
+    max-width: 600px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+.student__social{
+    padding: 0;
+    margin-top: 99px;
+}
+.student__social-item{
+    margin-right: 20px;
+    text-decoration: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+}
+.student__social-item:hover{
+    color: #ccc;
+}
+.student__image{
+    max-width: 270px;
+    min-height: 327px;
+    border-radius: 10px;
+    object-fit: contain;
+    object-position: top right;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    .student__image{
+        max-width: 307px;
+        max-height: 255px;
+    }
+    .student__info{
+        max-width: 60%;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        color: #FFFFFF;
+    }
+    .student__subtitle{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        color: #FFFFFF;
+    }
+    .student__title{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: -0.04em;
+        color: #FFFFFF;
+    }
+    
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .student{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .student__image{
+        margin: 0 auto;
+        padding-top: 60px;
+    }
+    .student__info{
+        grid-row: 2;
+        margin: 40px auto 0;
+    }
+    .student__title{
+        margin: 20px auto;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: -0.04em;
+        color: #FFFFFF;
+    }
+    .student__subtitle{
+        margin: 0;
+        padding-bottom: 20px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 16px;
+        color: #FFFFFF;
+
+    }
+    .student__paragraph{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 11px;
+        line-height: 16px;
+        color: #FFFFFF;
+    }
+    .student__social{
+        margin: 40px auto 0;
+    }
+    .student__social-item{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+    }
+}

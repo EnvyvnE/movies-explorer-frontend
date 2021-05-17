@@ -1,0 +1,35 @@
+.nav{
+    background-color: #272727;
+    min-height: 66px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.nav__list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.nav__item{
+    margin-right: 40px;
+}
+.nav__item:last-of-type{
+    margin-right: 0;
+}
+.nav__link{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.nav__link:hover{
+    color: #ccc;
+    opacity: 0.8;
+}
