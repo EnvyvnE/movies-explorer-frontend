@@ -53,7 +53,8 @@ color: #8B8B8B;
     color: #fff;
 
 }
-.login__input:active{
+.login__input:focus{
+    outline: none;
     border-bottom: 1px solid #4285F4;
     
 }

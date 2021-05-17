@@ -1,6 +1,6 @@
 import './Main.css';
 import Promo from '../Promo/Promo';
-import Navigation from '../Navigation/Navigation';
+import Navtab from '../Navtab/Navtab';
 import AboutProject from '../AboutProject/AboutProject';
 import Techs from '../Techs/Techs';
 import Student from '../Student/Student';
@@ -10,7 +10,7 @@ function Main(props) {
         <>
             <main className="main">
                 <Promo />
-                <Navigation />
+                <Navtab />
                 <AboutProject />
                 <Techs />
                 <Student />

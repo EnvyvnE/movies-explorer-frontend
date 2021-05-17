@@ -1,35 +1,165 @@
-.nav{
-    background-color: #272727;
-    min-height: 66px;
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation__list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70vw;
+}
+.navigation__account{
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
-.nav__list{
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+.navigation__link{
+    margin-right: 50px;
+    text-decoration: none;
+    color: #fff;
+    transition: opacity 0.2s linear;
 }
-.nav__item{
-    margin-right: 40px;
-}
-.nav__item:last-of-type{
-    margin-right: 0;
-}
-.nav__link{
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 16px;
-    text-decoration-line: underline;
-    color: #FFFFFF;
-    text-align: center;
+.navigation__link:hover{
+    opacity: .4;
 }
 
-.nav__link:hover{
-    color: #ccc;
-    opacity: 0.8;
+.navigation__link:last-of-type{
+    margin-right: 0;
+
+}
+.navigation__link_account{
+    justify-self: flex-end;
+    border-radius: 20px;
+    background-color: #313131;
+    padding: 8px 20px;
+}
+
+.nav__burger_menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation__close_btn{
+    display: none;
+    position: absolute;
+    z-index: 3;
+    top: 10;
+    right: 10;
+    border: none;
+    background-color: transparent;
+    background-image: url('../../images/close.svg');
+    background-repeat: no-repeat;
+    min-width: 25px;
+    min-height: 25px;
+}
+.navigation__link_main{
+    display: none;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    .navigation{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 5;
+        flex-direction: column;
+        background-color: #202020;
+        max-width: 520px;
+        min-height: 100vh;
+    }
+    .navigation__cover{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color:rgba(0,0,0, .3);
+        z-index: 4;
+    }
+    .navigation__list{
+        
+        padding-top: 154px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .navigation__link{
+        margin: 0;
+        margin-bottom: 24px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .navigation__link:hover{
+        padding-bottom: 4px;
+        border-bottom: 1px solid #fff;
+    }
+    .navigation__account{
+        padding-bottom: 90px;
+    }
+    .navigation__close_btn{
+        display: block;
+        position: absolute;
+        z-index: 6;
+        top: 20px;
+        right: 20px;
+    }
+    .navigation__link_main{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+    .navigation{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 5;
+        flex-direction: column;
+        background-color: #202020;
+        min-height: 100vh;
+    }
+  
+    .navigation__list{
+        padding-top: 154px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .navigation__link{
+        margin: 0;
+        margin-bottom: 24px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .navigation__link:hover{
+        padding-bottom: 4px;
+        border-bottom: 1px solid #fff;
+    }
+    .navigation__account{
+        padding-bottom: 90px;
+    }
+    .navigation__close_btn{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .navigation__link_main{
+        display: block;
+    }
 }

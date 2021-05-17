@@ -50,7 +50,7 @@ function App() {
   return (
 
       <div className="page">
-            <div className={`${ isMenuOpen && 'navtab__cover'}`} ></div>
+            <div className={`${ isMenuOpen && 'navigation__cover'}`} ></div>
         <Header pathname={location.pathname} menuState={isMenuOpen} onClose={closeAll} onClick={openMenu} state={loggedIn} />
         <Switch>
           <Route exact path='/'>

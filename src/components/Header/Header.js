@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Header.css';
-import Navtab from '../Navtab/Navtab';
+import Navigation from '../Navigation/Navigation';
 function Header(props) {
   
     const headerClassName = (
@@ -20,7 +20,7 @@ function Header(props) {
                                 <Link className='header__link header__link_active' to="/signin" onClick={props.handleLogout}>Войти</Link>
                             </nav> :
                             <div className={`header__nav ${props.menuState && 'header__nav_opened'}`} >
-                                <Navtab onClick={props.onClose} className="header__navtab" state={props.state} />
+                                <Navigation onClick={props.onClose} state={props.state} />
                             </div>
                     }
                     {props.state && <button className='header__burger_menu' type="button" onClick={props.onClick}></button>}
