@@ -10,7 +10,7 @@
 .movie_title{
     margin: 0;
     padding: 22px 0 0 22px;
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -20,7 +20,7 @@
 .movie__length{
     margin: 0;
     padding: 13px 0 0 22px;
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 11px;
@@ -66,7 +66,7 @@
         padding: 14px 0 0 12px;
         grid-row:1;
         grid-column:1;
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
@@ -78,7 +78,7 @@
         padding: 0 0 14px 12px;
         grid-row:2;
         grid-column:1;
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 11px;

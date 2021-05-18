@@ -30,6 +30,9 @@ function App() {
     console.log('closed');
     setIsMenuOpen(false);
   }
+  function handleState(){
+    setLoggedIn(true)
+  }
 
   React.useEffect(() => {
     setMovies(data);
@@ -60,7 +63,7 @@ function App() {
           <ProtectedRoute state={loggedIn} movies={movies} component={Movies} path='/saved-movies' />
           <ProtectedRoute state={loggedIn} onSubmit={setLoggedIn} component={Profile} path='/profile' />
           <Route state={loggedIn} component={Register} path='/signup' />
-          <Route onSubmit={setLoggedIn} state={loggedIn} component={Login} path='/signin' />
+          <Route setState={handleState} state={loggedIn} component={Login} path='/signin' />
           <Route component={PageNotFound} path='*' />
         </Switch>
         <Footer pathname={location.pathname} state={loggedIn} />

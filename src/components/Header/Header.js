@@ -23,7 +23,7 @@ function Header(props) {
                                 <Navigation onClick={props.onClose} state={props.state} />
                             </div>
                     }
-                    {props.state && <button className='header__burger_menu' type="button" onClick={props.onClick}></button>}
+                    <button className='header__burger_menu' type="button" onClick={props.onClick}></button>
                 </div>
             </header>
         </>

@@ -8,7 +8,7 @@
     grid-column-gap: 40px ;
 }
 .project__block_phase-title{
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -17,7 +17,7 @@
     color: #FFFFFF;
 }
 .project__block_time-title{
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -26,7 +26,7 @@
     color: #FFFFFF;
 }
 .project__block_time-paragraph{
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
 font-style: normal;
 font-weight: normal;
 font-size: 14px;
@@ -35,7 +35,7 @@ color: #FFFFFF;
 }
 
 .project__block_phase-paragraph{
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -53,7 +53,7 @@ color: #FFFFFF;
 }
 
 .info__graph_backend-visual-text{
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -62,7 +62,7 @@ color: #FFFFFF;
     text-align: center;
 }
 .info__graph_frontend-visual-text {
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -79,7 +79,7 @@ color: #FFFFFF;
 
 }
 .project__graph_backend-paragraph{
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -96,7 +96,7 @@ color: #FFFFFF;
     align-items:center;
 }
 .project__graph_frontend-paragraph{
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
 font-style: normal;
 font-weight: 500;
 font-size: 14px;
@@ -112,7 +112,7 @@ color: #8B8B8B;
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .project__block_phase-title{
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
@@ -121,7 +121,7 @@ color: #8B8B8B;
         color: #FFFFFF;
         }
     .project__block_phase-paragraph{
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 11px;
@@ -129,7 +129,7 @@ color: #8B8B8B;
         color: #FFFFFF;
         } 
     .project__block_time-title{
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
@@ -138,7 +138,7 @@ color: #8B8B8B;
         color: #FFFFFF;
         }
         .project__block_time-paragraph{
-            font-family: 'Inter';
+            font-family: 'Inter','Arial',sans-serif;
             font-style: normal;
             font-weight: normal;
             font-size: 11px;

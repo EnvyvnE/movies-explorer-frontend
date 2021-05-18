@@ -5,7 +5,7 @@ align-items: center;
 margin: 0 auto;
 }
 .student__title{
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 50px;
@@ -14,7 +14,7 @@ margin: 0 auto;
     color: #FFFFFF;
 }
 .student__subtitle{
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -23,7 +23,7 @@ margin: 0 auto;
 }
 .student__paragraph{
     max-width: 600px;
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -37,7 +37,7 @@ margin: 0 auto;
 .student__social-item{
     margin-right: 20px;
     text-decoration: none;
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -62,7 +62,7 @@ margin: 0 auto;
     }
     .student__info{
         max-width: 60%;
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
@@ -70,7 +70,7 @@ margin: 0 auto;
         color: #FFFFFF;
     }
     .student__subtitle{
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
@@ -78,7 +78,7 @@ margin: 0 auto;
         color: #FFFFFF;
     }
     .student__title{
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 40px;
@@ -103,7 +103,7 @@ margin: 0 auto;
     }
     .student__title{
         margin: 20px auto;
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 30px;
@@ -114,7 +114,7 @@ margin: 0 auto;
     .student__subtitle{
         margin: 0;
         padding-bottom: 20px;
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 11px;
@@ -123,7 +123,7 @@ margin: 0 auto;
 
     }
     .student__paragraph{
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 11px;
@@ -134,7 +134,7 @@ margin: 0 auto;
         margin: 40px auto 0;
     }
     .student__social-item{
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;

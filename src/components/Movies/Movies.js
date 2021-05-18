@@ -11,7 +11,6 @@ function Movies(props) {
     }
 
 
-
     return (
         <>
             <main className="movies__containe">

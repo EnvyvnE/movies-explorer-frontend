@@ -5,7 +5,7 @@
     border-bottom:1px solid #000;
 }
 .portfolio__title{
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -37,7 +37,7 @@
 .portfolio__item_link{
     display: block;
     text-decoration: none;
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -51,7 +51,7 @@ padding-top: 90px;
 padding-bottom: 90px;
 }
 .portfolio__item{
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 28px;
@@ -71,7 +71,7 @@ padding-bottom: 90px;
         padding-top: 40px;
     }
     .portfolio__title{
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
@@ -79,7 +79,7 @@ padding-bottom: 90px;
         color: #A0A0A0;
     }
     .portfolio__item_link{
-        font-family: 'Inter';
+        font-family: 'Inter','Arial',sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;

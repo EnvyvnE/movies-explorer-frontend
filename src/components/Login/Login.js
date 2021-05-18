@@ -34,7 +34,7 @@ function Login(props) {
                     <span className="login__input-error">
                         {errors && errors['password'] !== '' && errors['password']}
                     </span>
-                    <button type='submit' className='login__button'>Войти</button>
+                    <button onClick={props.setState} type='submit' className='login__button'>Войти</button>
                     <span className='login__span'>Ещё не зарегистрированы?<Link className='login__link' to='/signup'>Регистрация</Link></span>
                 </>
             </Auth>

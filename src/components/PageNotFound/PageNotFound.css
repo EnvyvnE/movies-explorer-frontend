@@ -12,7 +12,7 @@
 .alert__number{
     margin: 0;
     padding: 0;
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 140px;
@@ -24,7 +24,7 @@
 .alert__text{
     margin: 0;
     padding: 0;
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -37,7 +37,7 @@
     margin: 0;
     padding: 0;
     padding-top: 184px;
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -50,7 +50,7 @@
     min-width: 300px;
 }
 .alert__number{
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 80px;
@@ -59,7 +59,7 @@
     color: #FFFFFF;
 }
 .alert__text{
-    font-family: 'Inter';
+    font-family: 'Inter','Arial',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
