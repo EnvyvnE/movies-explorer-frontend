@@ -89,6 +89,9 @@ color: #8B8B8B;
 .login__button:hover{
     opacity: 0.7;
 }
+.login__button_disabled{
+    background-color: #ccc;
+}
 .login__link{
     padding-left: 6px;
     text-decoration: none;

@@ -1,21 +1,18 @@
 import './Login.css';
 import React from 'react';
 import Auth from '../Auth/Auth';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useFormWithValidation } from '../../utils/validation';
 
 function Login(props) {
-    const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation({});
-    const history = useHistory();
+    const { values, handleChange, errors, isValid, } = useFormWithValidation({});
 
     function handleSubmit(e) {
         e.preventDefault();
         if (isValid) {
-            localStorage.setItem('token', true);
-            history.push('/')
-            resetForm();
+            props.handleLogin(values);
         }
-        resetForm();
+       
     }
 
     return (
@@ -34,7 +31,7 @@ function Login(props) {
                     <span className="login__input-error">
                         {errors && errors['password'] !== '' && errors['password']}
                     </span>
-                    <button onClick={props.setState} type='submit' className='login__button'>Войти</button>
+                    <button onClick={props.setState} type='submit' disabled={!isValid} className={`login__button ${!isValid && 'login__button_disabled'}`}>Войти</button>
                     <span className='login__span'>Ещё не зарегистрированы?<Link className='login__link' to='/signup'>Регистрация</Link></span>
                 </>
             </Auth>

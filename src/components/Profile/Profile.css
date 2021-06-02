@@ -94,10 +94,10 @@
     line-height: 1.2;
     color: #fff;
   }
+ 
   
   .profile__input:focus {
     outline: none;
-    border-bottom: 1px solid rgba(170,170,170,0.2);
   }
   
   .profile__input-error {
@@ -135,6 +135,10 @@
   
   .profile__button:focus {
     outline: none;
+  }
+
+  .profile__button_disabled{
+    color: #ccc;
   }
   
   .profile__button:disabled {

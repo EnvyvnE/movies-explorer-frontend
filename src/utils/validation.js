@@ -8,6 +8,7 @@ export function useForm() {
     const target = event.target;
     const value = target.value;
     const name = target.name;
+
     setValues({...values, [name]: value});
   };
 
@@ -19,7 +20,6 @@ export function useFormWithValidation() {
   const [values, setValues] = React.useState({});
   const [errors, setErrors] = React.useState({});
   const [isValid, setIsValid] = React.useState(false);
-
   const handleChange = (event) => {
     const target = event.target;
     const name = target.name;
