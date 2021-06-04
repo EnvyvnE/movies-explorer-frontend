@@ -14,12 +14,13 @@ function MoviesCard(props) {
     const [isSaved,setIsSaved] = React.useState(false)
     const defaultPicture = 'https://images.unsplash.com/photo-1622323758558-8d1513e61e9b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2689&q=80';
     function handleLikeMovie() {
-        if (!isOwn) {
+        if (!isOwn && !isSaved) {
             props.onLike(props.movie);
             setIsSaved(true)
- 
-        } else {
+        } else if(isOwn){
             props.onDelete(props.movie._id);
+            setIsSaved(false)
+        } else {
             setIsSaved(false)
         }
  
@@ -27,6 +28,7 @@ function MoviesCard(props) {
 
 
     return (
+        <>
         <div className="movie" >
             <div className="movie__info">
                 <h3 className="movie_title">{props.nameRU}</h3>
@@ -34,12 +36,12 @@ function MoviesCard(props) {
                 {
                     location.pathname === '/saved-movies' ?
                         <img onClick={handleLikeMovie} className='movie__close' src={close} alt='delete' /> :
-                        <img onClick={handleLikeMovie} className='movie__like' src={isOwn ? red : black} alt='like' />
+                        <img onClick={handleLikeMovie} className='movie__like' src={isOwn || isSaved ? red : black} alt='like' />
                 }
             </div>
-            <img className="movie__image" src={isOwn ? props.movie.image :(props.movie.image.url ? (BASE_URL_MOVIE + props.movie.image.url) : defaultPicture )} alt={props.nameRU} />
-
+            <a className='movie__trailer' href={ props.trailerLink ? props.trailerLink : props.trailer} target="_blank" rel="noreferrer"><img className="movie__image" src= {isOwn ? props.image : (props.movie.image.url ? (BASE_URL_MOVIE + props.movie.image.url) : defaultPicture)}  alt={props.nameRU} /></a>
         </div>
+        </>
     )
 }
 export default MoviesCard;

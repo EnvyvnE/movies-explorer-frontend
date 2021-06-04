@@ -17,6 +17,11 @@
     line-height: 22px;
     color: #FFFFFF;
 }
+.movie__trailer{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    }
 .movie__length{
     margin: 0;
     padding: 13px 0 0 22px;
@@ -31,6 +36,7 @@
 }
 .movie__image{
     width:220px;
+    padding-top: 7px;
     margin: auto 0;
     object-fit: cover;
     object-position: left center;

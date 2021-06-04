@@ -6,9 +6,11 @@ import { useFormWithValidation } from '../../utils/validation';
 
 function Profile(props) {
   const currentUser = useContext(CurrentUserContext);
-  const { values, handleChange, errors, isValid } = useFormWithValidation({});
+  const { values, handleChange, errors, isValid } = useFormWithValidation({
+    email: currentUser.email,
+    name: currentUser.name});
+
   function handleSubmit(e) {
-    console.log(currentUser)
     e.preventDefault();
     props.handleUpdate(values);
   }

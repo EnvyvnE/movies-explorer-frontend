@@ -10,6 +10,12 @@
     max-width: 89%;
     margin: 0 auto;
 }
+.movies__not-found{
+ color: #FFF;
+ font-size: 1.2em;
+ text-align: center;
+}
+
 .movies__more{
     padding: 9px 120px;
     display: block;

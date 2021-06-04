@@ -32,6 +32,7 @@ function SavedMovies(props) {
                             ))
 
                     })}
+                    {filterMovieList.length === 0 && <p className="movies__not-found">Ничего не найдено</p>}
                     <button type='button' onClick={showMoreMovies} className='movies__more'>Еще</button>
                 </section>
 

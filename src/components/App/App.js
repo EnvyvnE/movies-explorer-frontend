@@ -33,20 +33,6 @@ function App() {
   function closeAll() {
     setIsMenuOpen(false);
   }
-  function handleSetSavedMovies() {
-    if (localStorage.getItem('jwt')) {
-      const jwt = localStorage.getItem('jwt');
-      mainApi.getMovies(jwt)
-        .then((res) => {
-          const savedData = res.data.filter((item) => {
-            return item.owner === currentUser._id
-          })
-          setSavedMovies(savedData);
-          localStorage.setItem('savedMovies', JSON.stringify(savedData))
-        })
-    }
-  }
-
 
   function handleRegister(values) {
     auth.register(values.name, values.email, values.password)
@@ -79,16 +65,25 @@ function App() {
   }
   function handleLogout() {
     localStorage.removeItem('jwt');
+    clearStorage()
     setLoggedIn(false);
   }
   function saveMovie(item) {
     if (localStorage.getItem('jwt')) {
       setIsLoading(true);
       const jwt = localStorage.getItem('jwt');
+      const localSavedMovies = JSON.parse(localStorage.getItem('savedMovies'));
+      const isSaved = localSavedMovies.some((m) => { return m.moveiId === item.id})
+      console.log(!isSaved)
+      if(!isSaved){
       mainApi.saveMovie(jwt, item)
-        .then(() => {
-          handleSetSavedMovies();
-
+        .then((movie) => {
+          setMoviesList(moviesList.map((m) => {
+           return m.id === movie.data.movieId ? movie : m;
+          }))
+          const newSavedMovies = [movie.data, ...localSavedMovies];
+          localStorage.setItem('savedMovies',JSON.stringify(newSavedMovies));
+          setSavedMovies(newSavedMovies);
         })
         .catch((err) => {
           console.log(err);
@@ -96,14 +91,19 @@ function App() {
         .finally(() => {
           setIsLoading(false)
         })
+      }
     }
   }
   function deleteMovie(movie) {
     const jwt = localStorage.getItem('jwt');
+    const localSavedMovies = JSON.parse(localStorage.getItem('savedMovies'));
     setIsLoading(true);
     mainApi.deleteMovie(movie, jwt)
       .then((res) => {
-        handleSetSavedMovies(res);
+        const newMovies = localSavedMovies.filter((movie) => movie._id !== res.movie._id);
+        localStorage.setItem('savedMovies', JSON.stringify(newMovies));
+        setSavedMovies(newMovies);
+        setMoviesList(moviesList.map((movie) => movie._id === res.movie.movieId ? moviesList.find((m) => m.id === movie.movieId) : movie));
       })
       .catch((err) => {
         console.log(err);
@@ -115,27 +115,41 @@ function App() {
 
   function handleUpdateInfo(data) {
     const jwt = localStorage.getItem('jwt');
+    setIsLoading(true);
     mainApi.patchUserInfo(data, jwt)
       .then((currentUser) => {
         setCurrentUser(currentUser.data);
       })
       .catch((err) => {
         console.log(err);
-      });
+      })
+      .finally(()=>{
+        setIsLoading(false)
+      })
 
   }
   function handleSearchSubmit(data) {
-    if (localStorage.getItem('moviesList')) {
+    if(localStorage.getItem('moviesList')){
       const movies = JSON.parse(localStorage.getItem('moviesList'));
       const result = movies.filter(function (e) {
         return e.nameRU.toLowerCase().indexOf(data.toLowerCase()) > -1 || e.nameEN.toLowerCase().indexOf(data.toLowerCase()) > -1;
       })
       localStorage.setItem('searchList', JSON.stringify(result));
-      handleSetSavedMovies();
       updateMovieList(result);
       setMoviesList(JSON.parse(localStorage.getItem('movies')));
-    } else {
-      getMoviesList();
+    } else (
+      getMoviesList()
+    )
+  }
+  function handleSearchSaved(data) {
+    if(localStorage.getItem('savedMovies')){
+      const movies = JSON.parse(localStorage.getItem('savedMovies'));
+      const result = movies.filter(function (e) {
+        return e.nameRU.toLowerCase().indexOf(data.toLowerCase()) > -1 || e.nameEN.toLowerCase().indexOf(data.toLowerCase()) > -1;
+      })
+      console.log(result)
+      localStorage.setItem('searchInSaved', JSON.stringify(result));
+      setSavedMovies(JSON.parse(localStorage.getItem('searchInSaved')));
     }
   }
 
@@ -152,12 +166,22 @@ function App() {
         setIsLoading(false)
       })
   }
+
   function updateMovieList(moviesList) {
     const listWithSavedMovies = moviesList.map((movie) => {
       const savedItem = savedMovies.find((m) => parseInt(m.movieId) === movie.id);
       return savedItem ? savedItem : movie;
     });
     localStorage.setItem('movies', JSON.stringify(listWithSavedMovies));
+  }
+
+  function clearStorage(){
+    localStorage.removeItem('savedMovies');
+    localStorage.removeItem('movies');
+    localStorage.removeItem('moviesList');
+    localStorage.removeItem('searchList');
+    localStorage.removeItem('searchInSaved');
+
   }
 
   React.useEffect(() => {
@@ -181,11 +205,14 @@ function App() {
     }
     handleTokenCheck();
     localStorage.removeItem('movies');
-  }, [history,]);
+  }, [history]);
 
   React.useEffect(() => {
     const jwt = localStorage.getItem('jwt');
     if (jwt) {
+      if(!localStorage.getItem('moviesList')){
+        getMoviesList();
+      }
       setIsLoading(true);
       Promise.all([
         mainApi.getUserInfo(jwt),
@@ -239,11 +266,10 @@ function App() {
             user={currentUser}
             isLoading={isLoading}
             setSavedMoviesList={setSavedMovies}
-            setSavedMovies={handleSetSavedMovies}
             setMoviesList={setMoviesList}
             setPage={setIsSavedMoviePage}
             state={loggedIn}
-            handleSearchSubmit={handleSearchSubmit}
+            handleSearchSubmit={handleSearchSaved}
             movies={savedMovies}
             onDelete={deleteMovie}
             component={SavedMovies}
