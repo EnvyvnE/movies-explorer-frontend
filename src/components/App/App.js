@@ -69,7 +69,7 @@ function App() {
     clearStorage()
     setLoggedIn(false);
   }
-  
+
   function saveMovie(item) {
     if (localStorage.getItem('jwt')) {
       setIsLoading(true);
@@ -219,6 +219,7 @@ function App() {
     const jwt = localStorage.getItem('jwt');
     if (jwt) {
       setIsLoading(true);
+      if(loggedIn){
       Promise.all([
         mainApi.getUserInfo(jwt),
         mainApi.getMovies(jwt)
@@ -238,7 +239,8 @@ function App() {
           setIsLoading(false)
         })
     }
-  }, [currentUser._id]);
+  }
+  }, [currentUser._id,loggedIn]);
 
 
   return (
