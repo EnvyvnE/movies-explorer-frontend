@@ -80,10 +80,11 @@ function App() {
       mainApi.saveMovie(jwt, item)
         .then((movie) => {
           setMoviesList(moviesList.map((m) => {
+            console.log(m)
+            console.log(movie)
            return m.id === movie.data.movieId ?  movie.data : m ;
           }))
           const newSavedMovies = [movie.data, ...localSavedMovies];
-          console.log(newSavedMovies)
           localStorage.setItem('savedMovies',JSON.stringify(newSavedMovies));
           setSavedMovies(newSavedMovies);
         })
@@ -232,7 +233,6 @@ function App() {
           localStorage.setItem('savedMovies', JSON.stringify(userSavedMovies));
           setSavedMovies(userSavedMovies);
           setCurrentUser(userInfo.data);
-
         })
         .catch((err) => console.log(err))
         .finally(() => {
