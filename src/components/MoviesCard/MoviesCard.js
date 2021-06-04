@@ -19,8 +19,10 @@ function MoviesCard(props) {
             setIsSaved(true)
         } else if(isOwn){
             props.onDelete(props.movie._id);
+            console.log('delete')
             setIsSaved(false)
         } else {
+            console.log('delete2')
             setIsSaved(false)
         }
  
