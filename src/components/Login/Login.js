@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useFormWithValidation } from '../../utils/validation';
 
 function Login(props) {
-    const { values, handleChange, errors, isValid, } = useFormWithValidation({});
+    const { values, handleChange, errors, isValid } = useFormWithValidation({});
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -27,7 +27,7 @@ function Login(props) {
                         {errors && errors['email'] !== '' && errors['email']}
                     </span>
                     <span className='login__input_label'>Пароль</span>
-                    <input onChange={handleChange} placeholder='Пароль' minLength='8' maxLength='16' name='password' type='password' className='login__input' />
+                    <input onChange={handleChange} placeholder='Пароль' required minLength='8' maxLength='16' name='password' type='password' className='login__input' />
                     <span className="login__input-error">
                         {errors && errors['password'] !== '' && errors['password']}
                     </span>

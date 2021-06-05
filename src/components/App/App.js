@@ -8,6 +8,7 @@ import SavedMovies from '../SavedMovies/SavedMovies'
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import Profile from '../Profile/Profile';
+import Popup from '../Popup/Popup';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
@@ -24,6 +25,7 @@ function App() {
   const [moviesList, setMoviesList] = React.useState([]);
   const [currentUser, setCurrentUser] = React.useState([]);
   const [isSavedMoviePage, setIsSavedMoviePage] = React.useState(false);
+  const [isPopupOpen, setIsPopupOpen] = React.useState(false)
   const history = useHistory();
   const location = useLocation();
 
@@ -32,6 +34,11 @@ function App() {
   }
   function closeAll() {
     setIsMenuOpen(false);
+    setIsPopupOpen(false)
+  }
+
+  function handleIsPopupOpen(){
+    setIsPopupOpen(true);
   }
 
   function handleRegister(values) {
@@ -120,6 +127,7 @@ function App() {
     mainApi.patchUserInfo(data, jwt)
       .then((currentUser) => {
         setCurrentUser(currentUser.data);
+        handleIsPopupOpen();
       })
       .catch((err) => {
         console.log(err);
@@ -200,6 +208,9 @@ function App() {
             if (res) {
               setCurrentUser({ email: res.data.email, name: res.data.name, _id: res.data._id });
               setLoggedIn(true);
+              if(localStorage.getItem('movies')){
+              setMoviesList(JSON.parse(localStorage.getItem('movies')))
+              }
               history.push('/movies');
             }
             else {
@@ -211,7 +222,7 @@ function App() {
       }
     }
     handleTokenCheck();
-    localStorage.removeItem('movies');
+    // localStorage.removeItem('movies');
   }, [history]);
 
   React.useEffect(() => {
@@ -292,6 +303,7 @@ function App() {
           </Route>
           <Route component={PageNotFound} path='*' />
         </Switch>
+        <Popup state={isPopupOpen} onClose={closeAll} isOpen={isPopupOpen}/>
         <Footer pathname={location.pathname} state={loggedIn} />
       </div>
     </CurrentUserContext.Provider>
