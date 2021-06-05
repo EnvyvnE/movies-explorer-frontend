@@ -6,8 +6,8 @@ import Preloader from '../Preloader/Preloader';
 
 function Movies(props) {
     const [visibleMovies, setVisibleMovies] = React.useState(3);
-
     function showMoreMovies() {
+        console.log(props.movies.length)
         setVisibleMovies(visibleMovies + 3);
     }
 
@@ -32,7 +32,7 @@ function Movies(props) {
                     })
                     }
                     {props.movies.length === 0 && <p className="movies__not-found">Ничего не найдено</p>}
-                    <button type='button' onClick={showMoreMovies} className='movies__more'>Еще</button>
+                    <button type='button' onClick={showMoreMovies} className={`movies__more ${props.movies.length !== 0 && props.movies.length > visibleMovies  && 'movies__more_visible'}`} >Еще</button>
                 </section>
 
             </main>

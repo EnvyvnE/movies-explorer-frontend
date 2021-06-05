@@ -33,7 +33,7 @@ function SavedMovies(props) {
 
                     })}
                     {filterMovieList.length === 0 && <p className="movies__not-found">Ничего не найдено</p>}
-                    <button type='button' onClick={showMoreMovies} className='movies__more'>Еще</button>
+                    <button type='button' onClick={showMoreMovies} className={`movies__more ${filterMovieList.length !== 0 && filterMovieList.length > visibleMovies  && 'movies__more_visible'}`} >Еще</button>
                 </section>
 
             </main>
