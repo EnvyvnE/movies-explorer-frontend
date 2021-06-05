@@ -2,7 +2,6 @@ import closeBtn from '../../images/close.svg';
 import './Popup.css';
 
 function Popup(props) {
-  console.log(props.isOpen)
 
   return (
     <section className={`popup popup_type_alert-succes ${props.isOpen && 'popup_opened'}`}>

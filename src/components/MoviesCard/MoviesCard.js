@@ -22,7 +22,11 @@ function MoviesCard(props) {
             console.log('delete')
             setIsSaved(false)
         } else {
-            console.log('delete2')
+            const saved = JSON.parse(localStorage.getItem('savedMovies'))
+            const selectedMovie = saved.find((m)=>{
+                return parseInt(m.movieId) === props.movie.id
+            })
+            props.onDelete(selectedMovie._id);
             setIsSaved(false)
         }
  
