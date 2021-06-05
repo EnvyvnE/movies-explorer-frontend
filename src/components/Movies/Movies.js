@@ -10,6 +10,7 @@ function Movies(props) {
         console.log(props.movies.length)
         setVisibleMovies(visibleMovies + 3);
     }
+    
 
     return (
         <>

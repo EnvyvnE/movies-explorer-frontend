@@ -80,8 +80,6 @@ function App() {
       mainApi.saveMovie(jwt, item)
         .then((movie) => {
           setMoviesList(moviesList.map((m) => {
-            console.log(m)
-            console.log(movie)
            return m.id === movie.data.movieId ?  movie.data : m ;
           }))
           const newSavedMovies = [movie.data, ...localSavedMovies];

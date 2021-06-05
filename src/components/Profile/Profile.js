@@ -25,6 +25,7 @@ function Profile(props) {
             <div className="profile__area profile__area_type_name">
               <input onChange={handleChange}
                 className="profile__input profile__input_type_name"
+                value={values.name}
                 type='text'
                 placeholder="Имя"
                 autoComplete="off"
@@ -39,6 +40,7 @@ function Profile(props) {
               <input onChange={handleChange}
                 className="profile__input profile__input_type_email"
                 type="email"
+                value={values.email}
                 autoComplete="off"
                 placeholder="Почта"
                 id="email-input" name="email"

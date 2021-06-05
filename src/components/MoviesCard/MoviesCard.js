@@ -28,6 +28,7 @@ function MoviesCard(props) {
  
     }
 
+    
 
     return (
         <>
