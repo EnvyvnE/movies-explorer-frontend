@@ -13,7 +13,7 @@ function Movies(props) {
     
 
     return (
-        <>
+        
             <main className="movies__containe">
                 <SearchForm setMoviesList={props.setMoviesList} handleSearchSubmit={props.handleSearchSubmit} />
                 {props.isLoading && <Preloader />}
@@ -27,7 +27,7 @@ function Movies(props) {
                                     onLike={props.onLike}
                                     onDelete={props.onDelete}
                                     movie={item}
-                                    key={i}
+                                    key={item.owner ? item.movieId : item.id}
                                     {...item} />
                             ))
                     })
@@ -37,7 +37,7 @@ function Movies(props) {
                 </section>
 
             </main>
-        </>
+        
     )
 }
 

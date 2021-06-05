@@ -9,7 +9,6 @@ function Header(props) {
            ${props.pathname === '/' && 'header_visible'}
           `)
     return (
-        <>
             <header className={headerClassName}>
                 <div className='header__container'>
                     <Link to='/' className="header__logo"></Link>
@@ -26,7 +25,6 @@ function Header(props) {
                     <button className='header__burger_menu' type="button" onClick={props.onClick}></button>
                 </div>
             </header>
-        </>
     )
 }
 export default Header;

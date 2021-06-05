@@ -16,7 +16,7 @@ function Profile(props) {
   }
 
   return (
-    <>
+    
       <section className="profile">
         <form method='POST' onSubmit={handleSubmit} className="profile__form" noValidate>
           <h3 className="profile__greeting">Привет, {currentUser.name}</h3>
@@ -55,7 +55,7 @@ function Profile(props) {
           <Link onClick={props.handleLogout} to="/" className="profile__link" >Выйти из аккаунта</Link>
         </form>
       </section>
-    </>
+    
   )
 }
 export default Profile;

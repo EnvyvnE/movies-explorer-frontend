@@ -35,7 +35,7 @@ function MoviesCard(props) {
     
 
     return (
-        <>
+        
         <div className="movie" >
             <div className="movie__info">
                 <h3 className="movie_title">{props.nameRU}</h3>
@@ -48,7 +48,7 @@ function MoviesCard(props) {
             </div>
             <a className='movie__trailer' href={ props.trailerLink ? props.trailerLink : props.trailer} target="_blank" rel="noreferrer"><img className="movie__image" src= {isOwn ? props.image : (props.movie.image.url ? (BASE_URL_MOVIE + props.movie.image.url) : defaultPicture)}  alt={props.nameRU} /></a>
         </div>
-        </>
+        
     )
 }
 export default MoviesCard;

@@ -2,8 +2,6 @@ import './Navigation.css';
 import { Link } from 'react-router-dom';
 function Navigation(props) {
     return (
-       
-         <>
          <nav className='navigation'>
              <button onClick={props.onClick} className='navigation__close_btn' type='button'></button>
              <div className="navigation__list">
@@ -15,9 +13,6 @@ function Navigation(props) {
              <Link onClick={props.onClick} className='navigation__link navigation__link_account' to="/profile" >Аккаунт</Link>
              </div>
          </nav>
-
-
-     </>
     )
 }
 export default Navigation;

@@ -18,9 +18,7 @@ function Register(props) {
     }
 
     return (
-        <>
             <Auth state={props.state} onSubmit={handleSubmit} greetings={'Добро пожаловать!'} type={'register'} >
-                <>
                     <span className='register__input_label'>Имя</span>
                     <input className='register__input' onChange={handleChange} id='name-input' required minLength='2' maxLength='30' placeholder='Имя' name='name' />
                     <span className="register__input-error">
@@ -41,9 +39,7 @@ function Register(props) {
                     <button type='submit' className={`register__button ${!isValid && 'register__button_disabled'}`} disabled={!isValid} >Зарегистрироваться</button>
                     <span className='register__span'>Уже зарегистрированы?<Link className='register__link' to='/signin'>Войти</Link></span>
 
-                </>
             </Auth>
-        </>
     )
 }
 

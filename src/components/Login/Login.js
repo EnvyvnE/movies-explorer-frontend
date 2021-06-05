@@ -16,9 +16,7 @@ function Login(props) {
     }
 
     return (
-        <>
             <Auth state={props.state} onSubmit={handleSubmit} greetings={'Рады видеть!'} type={'login'} >
-                <>
                     <span className='login__input_label'>E-mail</span>
                     <input onChange={handleChange} placeholder='Email' name='email' type='email' className='login__input'
                     pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,})\b" />
@@ -33,9 +31,7 @@ function Login(props) {
                     </span>
                     <button onClick={props.setState} type='submit' disabled={!isValid} className={`login__button ${!isValid && 'login__button_disabled'}`}>Войти</button>
                     <span className='login__span'>Ещё не зарегистрированы?<Link className='login__link' to='/signup'>Регистрация</Link></span>
-                </>
             </Auth>
-        </>
     )
 }
 
