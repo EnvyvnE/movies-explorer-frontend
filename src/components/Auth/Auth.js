@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Auth(props) {
 
     return (
-        <>
+        
             <section className={`${props.type}`}>
                 <form onSubmit={props.onSubmit} className={`${props.type}__form`}>
                     <Link className={`${props.type}__logo`} to='/'></Link>
@@ -12,7 +12,6 @@ function Auth(props) {
                     {props.children}
                 </form>
             </section>
-        </>
     )
 }
 

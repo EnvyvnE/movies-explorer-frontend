@@ -7,19 +7,18 @@ import { useFormWithValidation } from '../../utils/validation';
 
 function Register(props) {
     const { values, handleChange, errors, isValid } = useFormWithValidation({});
+
     function handleSubmit(e) {
         e.preventDefault();
         if (isValid) {
-            localStorage.setItem('user',[values.name,values.email]);
-            props.history.push('/signin');
+            console.log(values)
+            props.handleRegister(values);
         }
 
     }
 
     return (
-        <>
             <Auth state={props.state} onSubmit={handleSubmit} greetings={'Добро пожаловать!'} type={'register'} >
-                <>
                     <span className='register__input_label'>Имя</span>
                     <input className='register__input' onChange={handleChange} id='name-input' required minLength='2' maxLength='30' placeholder='Имя' name='name' />
                     <span className="register__input-error">
@@ -37,12 +36,10 @@ function Register(props) {
                     <span className="register__input-error">
                         {errors && errors['password'] !== '' && errors['password']}
                     </span>
-                    <button type='submit' className='register__button' >Зарегистрироваться</button>
+                    <button type='submit' className={`register__button ${!isValid && 'register__button_disabled'}`} disabled={!isValid} >Зарегистрироваться</button>
                     <span className='register__span'>Уже зарегистрированы?<Link className='register__link' to='/signin'>Войти</Link></span>
 
-                </>
             </Auth>
-        </>
     )
 }
 

@@ -1,7 +1,6 @@
 import './Portfolio.css'
 function Portfolio(props) {
     return (
-        <>
         <div className="portfolio">
         <h3 className="portfolio__title">Портфолио</h3>
         <ul className="portfolio__list">
@@ -16,7 +15,6 @@ function Portfolio(props) {
             </li>
         </ul>
         </div>
-        </>
     )
 }
 export default Portfolio;

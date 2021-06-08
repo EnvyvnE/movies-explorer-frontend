@@ -7,7 +7,6 @@ import Student from '../Student/Student';
 
 function Main(props) {
     return (
-        <>
             <main className="main">
                 <Promo />
                 <Navtab />
@@ -15,7 +14,6 @@ function Main(props) {
                 <Techs />
                 <Student />
             </main>
-        </>
     )
 }
 export default Main;
